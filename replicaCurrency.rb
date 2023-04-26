@@ -9,7 +9,7 @@ module Curconv
 
   # puts "Displaying currency code\n"
 
-      rates = {
+      RATES = {
       'INR'=> {
         'USD' => 0.0122,
         'EUR' => 0.011,
@@ -55,25 +55,25 @@ module Curconv
         #     puts ""
         # end
 
-        puts "Choose your currency code --"
-        puts "1)  INR "
-        puts "2)  USD "
-        puts "3)  Eur"
-        puts "4)  JPY"
-        puts "5)  GBP"
-        @currencyCode = gets.chomp.upcase
+                            # puts "Choose your currency code --"
+                            # puts "1)  INR "
+                            # puts "2)  USD "
+                            # puts "3)  Eur"
+                            # puts "4)  JPY"
+                            # puts "5)  GBP"
+                            # @currencyCode = gets.chomp.upcase
 
-        puts "\nEnter your Amount Which you want to convert "
-        @Amount = gets.chomp.to_i
+                            # puts "\nEnter your Amount Which you want to convert "
+                            # @Amount = gets.chomp.to_i
 
-        # current_curr = gets.chomp.upcase
-        puts "\nEnter your target Currency code"
-        puts "1)  INR "
-        puts "2)  USD "
-        puts "3)  Eur"
-        puts "4)  JPY"
-        puts "5)  GBP"
-        @changeCurrencyCode = gets.chomp.upcase
+                            # # current_curr = gets.chomp.upcase
+                            # puts "\nEnter your target Currency code"
+                            # puts "1)  INR "
+                            # puts "2)  USD "
+                            # puts "3)  Eur"
+                            # puts "4)  JPY"
+                            # puts "5)  GBP"
+                            # @changeCurrencyCode = gets.chomp.upcase
 
 
 
@@ -85,7 +85,8 @@ module Curconv
         # currencyRate = rates[@currencyCode][@changeCurrencyCode]
         # puts currencyRate
 
-        rates.each do
+        def valueConveter(amount,currencyCode,changeCurrencyCode)
+        RATES.each do
           |currcodehave,currencycodetarget|
 
           currencycodetarget.each do
@@ -101,10 +102,11 @@ module Curconv
 
         # Money.add_rate(@currencyCode,@changeCurrencyCode,currencyRate)
         # rs = Money.from_amount(@Amount, "INR").exchange_to("USD")
-        peesa = Money.from_amount(@Amount, @currencyCode)
-        rs = peesa.exchange_to(@changeCurrencyCode)
+        peesa = Money.from_amount(amount, currencyCode)
+        rs = peesa.exchange_to(changeCurrencyCode)
         puts "Conveterd Currency is -->  #{rs.format}"
 
+      end
 
     # end
 # end
