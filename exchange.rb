@@ -108,24 +108,26 @@ class Exchange
   # end
 
 end
- puts "Choose your currency code --"
-        puts "1)  INR "
-        puts "2)  USD "
-        puts "3)  Eur"
-        puts "4)  JPY"
-        puts "5)  GBP"
+ puts "Please Enter your Currency CODE  --"
+        puts "    COUNTRY         CURRENCY      CURRENCY-CODE\n"
+        puts "1)  Indian          (Rupees)          INR "
+        puts "2)  United State    (Dollar)          USD "
+        puts "3)  Europe          (Euro)            Eur"
+        puts "4)  Japnees         (Yen)             JPY"
+        puts "5)  Britain         (Pound)           GBP"
         currencyCode = gets.chomp.upcase
 
-        puts "\nEnter your Amount Which you want to convert "
+        puts "\nEnter Amoutn to CONVERT "
         amount = gets.chomp.to_i
 
         # current_curr = gets.chomp.upcase
-        puts "\nEnter your target Currency code"
-        puts "1)  INR "
-        puts "2)  USD "
-        puts "3)  Eur"
-        puts "4)  JPY"
-        puts "5)  GBP"
+        puts "Select target currency CODE to convert your Money"
+        puts "    COUNTRY         CURRENCY      CURRENCY-CODE\n"
+        puts "1)  Indian          (Rupees)          INR "
+        puts "2)  United State    (Dollar)          USD "
+        puts "3)  Europe          (Euro)            Eur"
+        puts "4)  Japnees         (Yen)             JPY"
+        puts "5)  Britain         (Pound)           GBP"
         changeCurrencyCode = gets.chomp.upcase
 
 ## driver logic
@@ -151,3 +153,5 @@ ex.valueConveter(amount,currencyCode,changeCurrencyCode)
 # ## driver logic
 # ex = Exchange.new(8976, "USD")
 # ex.inr_to_usd
+
+
